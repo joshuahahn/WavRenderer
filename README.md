@@ -55,3 +55,65 @@ The render_song program creates a song from a text file that specifies details a
     - **G instrument gain**: Sets gain factor
         - *instrument*: Specifies instrument to be modified.
         - *gain*: Specifies gain factor (0.0 for none, 1.0 for maximum).
+
+**Example Usage**
+
+```
+352800
+
+W 0 1
+E 0 1
+P 0 -0.4
+
+W 1 2
+E 1 1
+P 1 0.4
+
+N 0 0 8820 63 0.8
+N 0 0 8820 66 0.8
+N 1 22050 30870 61 0.8
+N 1 22050 30870 65 0.8
+N 0 44100 52920 63 0.8
+N 0 44100 52920 66 0.8
+N 1 66150 74970 61 0.8
+N 1 66150 74970 65 0.8
+N 0 88200 97020 63 0.8
+N 0 88200 97020 66 0.8
+N 1 110250 119070 61 0.8
+N 1 110250 119070 65 0.8
+N 0 132300 141120 63 0.8
+N 0 132300 141120 66 0.8
+N 1 154350 163170 61 0.8
+N 1 154350 163170 65 0.8
+
+N 0 176400 194040 66 0.8
+N 0 176400 194040 70 0.8
+N 1 220500 238140 66 0.8
+N 1 220500 238140 70 0.8
+N 0 264600 282240 66 0.8
+N 0 264600 282240 70 0.8
+```
+
+---
+
+## Echo Rendering
+
+The render_echo program modifies a WAVE file and adds echo based on specified parameters. Invoked using ```./render_echo wavfilein wavfileout delay amplitude```
+
+**Parameters**
+
+- *wavfilein*: Specifies the name of the input WAVE file.
+- *wavfileout*: Specifies the name of the output WAVE file.
+- *delay*: Specifies the delay time in sample numbers.
+- *amplitude*: Specifies the volume of the echos as a floating point value from 0.0 (no echo) to 1.0 (max echo).
+
+**Example Usage**
+
+- Adding echo to a file named "example.wav" into a file named "echo.wav" with a delay of 22050 samples (or 0.5 seconds, calculated using 44100 * x seconds) and a echo factor of 0.5.
+    - ```./render_echo example.wav echo.wav 22050 0.5```
+- Adding echo to a file named "example2.wav" into a file named "echo2.wav" with a delay of 11025 samples (or 0.25 seconds, calculated using 44100 * x seconds) and a echo factor of 0.3.
+    - ```./render_echo example2.wav echo2.wav 11025 0.3```
+
+---
+
+Project completed with Kevin Kim of Johns Hopkins University 
